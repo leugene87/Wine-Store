@@ -1,0 +1,14 @@
+.full-width-table {
+  width: 100%;
+
+}
+table {
+  border: 2px solid black;
+}
+
+th {
+  font-weight: bold;
+  font-size: 100%;
+  border-bottom: 1px solid black;
+}
+

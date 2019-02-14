@@ -1,0 +1,22 @@
+<div *ngIf="info.token">
+  <mat-toolbar-row>
+    <p>Welcome to Wine Store! You are succesfully loged-in.</p>
+  </mat-toolbar-row>
+  <mat-toolbar-row>
+    <span><b>Username:  </b>&nbsp;&nbsp; {{info.username}} &nbsp;&nbsp;</span>
+    <span class="example-spacer"></span>
+    <mat-icon class="example-icon">verified_user</mat-icon>
+  </mat-toolbar-row>
+    <mat-toolbar-row>
+    <span><b>Role:  </b>&nbsp;&nbsp; {{info.authorities}}</span>
+    <span class="example-spacer"></span>
+
+  </mat-toolbar-row>
+    <mat-toolbar-row>
+    <span><b>Token:  </b>&nbsp;&nbsp; {{info.token}}</span>
+    <span class="example-spacer"></span>
+  </mat-toolbar-row>
+    <mat-toolbar-row>
+<button mat-raised-button color="accent" class="btn btn-secondary" (click)="logout()">Logout</button >
+  </mat-toolbar-row>
+</div>

@@ -1,0 +1,44 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport="true"
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="!(isHandset$ | async)">
+    <mat-toolbar *ngIf="authority === 'admin'">Admin Menu:</mat-toolbar>
+    <mat-toolbar *ngIf="authority === 'user'">User Menu:</mat-toolbar>
+    <mat-nav-list>
+      <a *ngIf="authority" mat-list-item routerLink="/home">
+        Home
+      </a>
+      <a *ngIf="authority === 'user' || authority === 'admin'" mat-list-item routerLink="/wines">
+        Wine List
+      </a>
+      <a *ngIf="authority === 'admin'" mat-list-item routerLink="/addWine">
+        Add new wine
+      </a>
+      <a *ngIf="!authority" mat-list-item routerLink="/auth/login">
+        Login
+      </a>
+
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span>Wine Store</span>
+    </mat-toolbar>
+    <!-- Add Content Here -->
+    <app-home     *ngIf="router === '/home'"></app-home>
+    <app-wine     *ngIf="router === '/admin'"></app-wine>
+    <app-wine     *ngIf="router === '/wines'"></app-wine>
+    <app-addwine  *ngIf="router === '/addWine'"></app-addwine>
+    <app-login    *ngIf="router === '/auth/login'"></app-login>
+    <app-register *ngIf="router === '/signup'"></app-register>
+  </mat-sidenav-content>
+</mat-sidenav-container>

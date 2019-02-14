@@ -1,0 +1,28 @@
+
+<div class="example-container">
+  <mat-form-field>
+    <input [(ngModel)]="wname" matInput placeholder="Input wine name here...">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-select [(ngModel)]="wvolume" placeholder="Choose volume here...">
+      <mat-option value="0.1">0.1 L</mat-option>
+      <mat-option value="0.3">0.3 L</mat-option>
+      <mat-option value="0.7">0.7 L</mat-option>
+      <mat-option value="1.0">1.0 L</mat-option>
+      <mat-option value="1.5">1.5 L</mat-option>
+      <mat-option value="3.0">3.0 L</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input type="number" [(ngModel)]="wprice" matInput placeholder="Input price here..." />
+  </mat-form-field>
+
+    <mat-form-field>
+    <input type="number" [(ngModel)]="wqty" matInput placeholder="Input quantity here...">
+  </mat-form-field>
+  </div>
+<button mat-raised-button color="accent" (click)="addWine()"> Add New Item </button>    
+
+ 
