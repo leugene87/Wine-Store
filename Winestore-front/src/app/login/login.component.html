@@ -8,7 +8,7 @@
   <div class="row col-sm-6" style="max-width:350px;">
     <form name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
       <div class="form-group">
-        <label for="username">Username</label>
+        <label for="username">Username xxxxxxxxxxxxxx</label>
         <input type="text" class="form-control" autocomplete="username" name="username" [(ngModel)]="form.username"
           #username="ngModel" required />
         <div *ngIf="f.submitted && username.invalid">
@@ -32,7 +32,11 @@
       </div>
     </form>
     <hr />
+<<<<<<< Updated upstream
     <h5>Default users:</h5>
+=======
+    <h5>Default test test 2 xxxxxxxxxxxxxxxxx users:</h5>
+>>>>>>> Stashed changes
     <ul>
       <li>admin / 7777</li>
       <li>user / 1111</li>
