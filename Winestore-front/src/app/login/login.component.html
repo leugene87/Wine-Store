@@ -8,7 +8,7 @@
   <div class="row col-sm-6" style="max-width:350px;">
     <form name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
       <div class="form-group">
-        <label for="username">Username xxxxxxxxxxxxxx</label>
+        <label for="username">Username</label>
         <input type="text" class="form-control" autocomplete="username" name="username" [(ngModel)]="form.username"
           #username="ngModel" required />
         <div *ngIf="f.submitted && username.invalid">
@@ -16,7 +16,7 @@
         </div>
       </div>
       <div class="form-group">
-        <label for="password">Password xxx</label>
+        <label for="password">Password</label>
         <input type="password" class="form-control" autocomplete="current-password" name="password"
           [(ngModel)]="form.password" #password="ngModel" required minlength="4" />
         <div *ngIf="f.submitted && password.invalid">
